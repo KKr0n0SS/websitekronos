@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pre-order Software | Undetek</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-    <div class="text-center p-6 bg-gray-800 rounded-lg shadow-lg">
-        <h1 class="text-4xl font-bold mb-4">Pre-order Software!</h1>
-        <p class="text-lg mb-6">Coming soon by <span class="text-blue-400">Undetek</span></p>
-        <p class="text-lg mb-4">Pre-orders: <span id="preorder-count">0</span></p>
-        <button id="preorder-button" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-lg">
-            Pre-order Now
-        </button>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let count = localStorage.getItem("preorderCount") || 0;
-            let hasOrdered = localStorage.getItem("hasOrdered") === "true";
-            document.getElementById("preorder-count").textContent = count;
-            const button = document.getElementById("preorder-button");
-
-            if (hasOrdered) {
-                button.disabled = true;
-                button.classList.add("opacity-50", "cursor-not-allowed");
-            }
-
-            button.addEventListener("click", function() {
-                if (!hasOrdered) {
-                    count++;
-                    localStorage.setItem("preorderCount", count);
-                    localStorage.setItem("hasOrdered", "true");
-                    document.getElementById("preorder-count").textContent = count;
-                    button.disabled = true;
-                    button.classList.add("opacity-50", "cursor-not-allowed");
-                }
-            });
-        });
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">SEND</div>
+      <div class="nav-items">
+        <a href="/">Home</a> <a href="/">About</a> <a href="/">Contact</a>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="column-left">
+          <h1>Send Unlimited Messages</h1>
+          <p>
+            No contracts or unwanted fees. Exclusive offer for new customers
+            only.
+          </p>
+          <button>Get Started</button>
+        </div>
+        <div class="column-right">
+          <img
+            src="./image-1.svg"
+            alt="illustration
+        "
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
